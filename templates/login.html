@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}PROCTIFY — Login{% endblock %}
+{% block content %}
+<section class="card center-card">
+  <h1 class="hero-title">PROCTIFY</h1>
+  <p class="hero-sub">AI Smart Exam Monitoring System</p>
+  <form method="post" class="form-stack">
+    <label>Username
+      <input type="text" name="username" required autocomplete="username" />
+    </label>
+    <label>Password
+      <input type="password" name="password" required autocomplete="current-password" />
+    </label>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <p class="hint">Demo: any non-empty username and password</p>
+</section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}PROCTIFY — Report{% endblock %}
+{% block content %}
+<section class="card wide-card">
+  <h2>Exam report</h2>
+  {% if payload %}
+  <div class="report-grid">
+    <div>
+      <h3>Candidate</h3>
+      <p><strong>Name:</strong> {{ payload.name }}</p>
+      <p><strong>Student ID:</strong> {{ payload.student_id }}</p>
+      <p><strong>Exam:</strong> {{ payload.exam }}</p>
+      <p><strong>Duration (s):</strong> {{ payload.duration_seconds }}</p>
+    </div>
+    <div>
+      <h3>Behavior</h3>
+      <p><strong>% Looking forward:</strong> {{ payload.pct_looking_forward }}%</p>
+      <p><strong>% Looking away:</strong> {{ payload.pct_looking_away }}%</p>
+      <p><strong>% Looking down:</strong> {{ payload.pct_looking_down }}%</p>
+      <p><strong>Violations:</strong> {{ payload.violations }}</p>
+    </div>
+    <div>
+      <h3>Outcome</h3>
+      <p><strong>Trust score:</strong> {{ payload.trust_score }}%</p>
+      <p><strong>Phone detections:</strong> {{ payload.phone_detected }}</p>
+      <p><strong>Multi-face events:</strong> {{ payload.multiple_faces_events }}</p>
+      <p class="result-line {% if payload.final_status == 'FAILED' %}fail{% else %}pass{% endif %}">
+        <strong>Final result:</strong> {{ payload.final_status }}
+      </p>
+    </div>
+  </div>
+  <h3>Evidence images</h3>
+  <ul class="evidence-list">
+    {% for path in payload.evidence_images %}
+    <li>{{ path }}</li>
+    {% endfor %}
+    {% if not payload.evidence_images %}
+    <li class="muted">None captured</li>
+    {% endif %}
+  </ul>
+  <p class="muted">JSON and PDF reports are saved under the <code>reports/</code> folder.</p>
+  {% else %}
+  <p>No report available yet. Complete or terminate an exam first.</p>
+  <p><a href="{{ url_for('login') }}" class="btn btn-primary">Go to login</a></p>
+  {% endif %}
+</section>
+{% endblock %}

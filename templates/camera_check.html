@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}PROCTIFY — Camera Check{% endblock %}
+{% block content %}
+<section class="card wide-card">
+  <h2>Camera verification</h2>
+  <p class="muted">Position yourself in frame. We require exactly one face.</p>
+  <div class="cam-wrap">
+    <video id="preview" autoplay playsinline muted></video>
+    <canvas id="snap" hidden></canvas>
+  </div>
+  <p id="cam-status" class="status-msg">Initializing camera…</p>
+  <p id="verify-msg" class="verify-result"></p>
+  <div class="btn-row">
+    <a id="start-exam" class="btn btn-primary disabled" href="{{ url_for('exam') }}">Start Exam</a>
+  </div>
+</section>
+<script src="{{ url_for('static', filename='js/camera_check.js') }}"></script>
+{% endblock %}

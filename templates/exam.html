@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}PROCTIFY — Exam{% endblock %}
+{% block content %}
+<div class="exam-layout" id="exam-root">
+  <div class="exam-top">
+    <span class="exam-brand">PROCTIFY</span>
+    <div class="timer-box">
+      <span class="timer-label">Time</span>
+      <span id="timer">00:00:00</span>
+    </div>
+  </div>
+
+  <div class="exam-mid">
+    <div class="exam-video">
+      <img id="stream" src="{{ url_for('video_feed') }}" alt="Live exam stream" />
+      <div id="freeze-overlay" class="freeze-overlay hidden">
+        <p class="freeze-title">Exam Terminated</p>
+        <p id="freeze-reason"></p>
+        <a class="btn btn-primary" href="{{ url_for('report') }}">View report</a>
+      </div>
+    </div>
+    <aside class="exam-panel">
+      <h3>Live status</h3>
+      <ul class="status-list">
+        <li><span class="lbl">Face</span> <span id="st-face" class="val ok">—</span></li>
+        <li><span class="lbl">Eyes</span> <span id="st-eye" class="val ok">—</span></li>
+        <li><span class="lbl">Head</span> <span id="st-head" class="val ok">—</span></li>
+        <li><span class="lbl">Objects</span> <span id="st-obj" class="val warn">—</span></li>
+        <li><span class="lbl">Trust Score</span> <span id="st-trust" class="val trust">100%</span></li>
+      </ul>
+      <p id="warn-banner" class="warn-banner"></p>
+      <p id="alert-line" class="alert-line"></p>
+      <div class="meta-row"><span>FPS</span> <strong id="fps-val">0</strong></div>
+    </aside>
+  </div>
+
+  <div class="exam-bottom">
+    <h4>Warning log</h4>
+    <ul id="warn-log" class="warn-log"></ul>
+  </div>
+
+  <div class="exam-actions">
+    <button type="button" class="btn btn-secondary" id="btn-submit">Submit exam</button>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/exam.js') }}"></script>
+{% endblock %}

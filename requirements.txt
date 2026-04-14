@@ -1,0 +1,7 @@
+flask
+opencv-python
+# Tasks API only — legacy mp.solutions was removed in recent wheels. Python 3.11–3.12 recommended if MediaPipe fails on 3.13.
+mediapipe>=0.10.30
+ultralytics
+numpy
+reportlab

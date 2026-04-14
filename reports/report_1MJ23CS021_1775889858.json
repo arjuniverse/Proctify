@@ -1,0 +1,24 @@
+{
+  "name": "Arjun Sharma",
+  "student_id": "1MJ23CS021",
+  "exam": "Machine Learning",
+  "duration_seconds": 38.3,
+  "pct_looking_forward": 86.4,
+  "pct_looking_away": 10.9,
+  "pct_looking_down": 0.0,
+  "violations": 0,
+  "trust_score": 40.0,
+  "phone_detected": 0,
+  "multiple_faces_events": 1,
+  "final_status": "PASSED",
+  "evidence_images": [
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\New folder\\Proctify\\evidence\\1775889858467_multiple_faces.jpg"
+  ],
+  "alerts": [
+    {
+      "event": "multiple_faces",
+      "time": "2026-04-11 12:14:18",
+      "severity": "HIGH"
+    }
+  ]
+}

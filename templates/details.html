@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}PROCTIFY — Candidate Details{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Candidate details</h2>
+  <p class="muted">Enter your information before the camera check.</p>
+  <form method="post" class="form-stack">
+    <label>Full name
+      <input type="text" name="name" value="{{ student.name if student else '' }}" required />
+    </label>
+    <label>Student ID
+      <input type="text" name="student_id" value="{{ student.student_id if student else '' }}" required />
+    </label>
+    <label>Exam name
+      <input type="text" name="exam_name" value="{{ student.exam_name if student else '' }}" required />
+    </label>
+    <button type="submit" class="btn btn-primary">Continue</button>
+  </form>
+</section>
+{% endblock %}

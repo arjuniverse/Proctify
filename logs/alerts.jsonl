@@ -1,0 +1,4 @@
+{"student_id": "1MJ23CS021", "event": "exam_started", "time": "2026-04-11 12:12:09", "severity": "INFO", "extra": {"exam": "Machine Learning"}}
+{"student_id": "1MJ23CS021", "event": "exam_started", "time": "2026-04-11 12:13:33", "severity": "INFO", "extra": {"exam": "Machine Learning"}}
+{"student_id": "1MJ23CS021", "event": "multiple_faces", "time": "2026-04-11 12:14:18", "severity": "HIGH"}
+{"student_id": "1MJ23CS021", "event": "exam_terminated:Cheating Detected (multiple faces)", "time": "2026-04-11 12:14:18", "severity": "HIGH"}
